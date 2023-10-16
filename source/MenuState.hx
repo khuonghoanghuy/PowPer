@@ -1,9 +1,8 @@
 package;
 
-import flixel.FlxState;
 import flixel.ui.FlxButton;
 
-class MenuState extends FlxState
+class MenuState extends MainState
 {
 	// list of button
 	var startButton:FlxButton;
