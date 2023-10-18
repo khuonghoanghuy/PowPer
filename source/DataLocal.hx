@@ -34,4 +34,23 @@ class DataLocal
 	{
 		FlxG.camera.flash(color, time, setFunction);
 	}
+
+	public static function initData()
+	{
+		if (FlxG.save.data.toggleFPS == null)
+			FlxG.save.data.toggleFPS = false;
+
+		#if desktop
+		if (FlxG.save.data.fullscreen != null)
+		{
+			FlxG.fullscreen = FlxG.save.data.fullscreen;
+		}
+		#end
+	}
+
+	public static function createData(name:String)
+	{
+		FlxG.save.bind(name, "powperGame");
+		FlxG.save.flush();
+	}
 }
