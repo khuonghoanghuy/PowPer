@@ -20,8 +20,18 @@ class DataLocal
 		return fileThingie;
 	}
 
+	public static function getSave()
+	{
+		FlxG.save.flush();
+	}
+
 	public static function switchFade(color:FlxColor, time:Float, isFadeIn:Bool = false, setFunction:Dynamic)
 	{
 		FlxG.camera.fade(color, time, isFadeIn, setFunction);
+	}
+
+	public static function switchFlashColor(color:FlxColor, time:Float, setFunction:Dynamic)
+	{
+		FlxG.camera.flash(color, time, setFunction);
 	}
 }

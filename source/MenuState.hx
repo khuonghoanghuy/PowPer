@@ -25,7 +25,8 @@ class MenuState extends MainState
 		quitButton = new FlxButton(toggleX, 295, DataLocal.getString(AssetPaths.quit__txt), onExit);
 		add(quitButton);
 
-		var textVersion:FlxText = new FlxText(20, 20, 0, DataLocal.getString(AssetPaths.versiontext__txt) + Application.current.meta.get("version"), 12);
+		var textVersion:FlxText = new FlxText(20, FlxG.height - 20, 0,
+			DataLocal.getString(AssetPaths.versiontext__txt) + Application.current.meta.get("version"), 12);
 		textVersion.updateHitbox();
 		add(textVersion);
 	}
@@ -35,11 +36,17 @@ class MenuState extends MainState
 		System.exit(0);
 	}
 
-	function onStart():Void {}
+	function onStart():Void
+	{
+		DataLocal.switchFlashColor(FlxColor.WHITE, 0.33, function()
+		{
+			trace("move state");
+		});
+	}
 
 	function onSetting():Void
 	{
-		DataLocal.switchFade(FlxColor.BLACK, 0.33, true, function()
+		DataLocal.switchFade(FlxColor.BLACK, 0.33, false, function()
 		{
 			FlxG.switchState(new SettingMenu());
 		});

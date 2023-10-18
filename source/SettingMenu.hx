@@ -31,7 +31,8 @@ class SettingMenu extends MainState
 
 	function onBack():Void
 	{
-		DataLocal.switchFade(FlxColor.BLACK, 0.33, true, function()
+		DataLocal.getSave();
+		DataLocal.switchFade(FlxColor.BLACK, 0.33, false, function()
 		{
 			FlxG.switchState(new MenuState());
 		});
