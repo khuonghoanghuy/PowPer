@@ -41,6 +41,7 @@ class MenuState extends MainState
 		DataLocal.switchFlashColor(FlxColor.WHITE, 0.33, function()
 		{
 			trace("move state");
+			FlxG.switchState(new PlayState());
 		});
 	}
 
