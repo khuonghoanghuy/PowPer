@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
@@ -13,6 +14,7 @@ class MenuState extends MainState
 	var startButton:FlxButton;
 	var settingButton:FlxButton;
 	var quitButton:FlxButton;
+	var titlePop:FlxSprite;
 
 	override function create()
 	{
@@ -29,11 +31,22 @@ class MenuState extends MainState
 			DataLocal.getString(AssetPaths.versiontext__txt) + Application.current.meta.get("version"), 12);
 		textVersion.updateHitbox();
 		add(textVersion);
+
+		titlePop = new FlxSprite(377, 165);
+		titlePop.loadGraphic(AssetPaths.title__png);
+		titlePop.scale.set(3, 3);
+		titlePop.antialiasing = false;
+		titlePop.updateHitbox();
+		add(titlePop);
 	}
 
 	function onExit():Void
 	{
-		System.exit(0);
+		DataLocal.switchFade(FlxColor.BLACK, 0.33, function()
+		{
+			trace("exit game");
+			System.exit(0);
+		});
 	}
 
 	function onStart():Void
@@ -56,5 +69,12 @@ class MenuState extends MainState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (FlxG.mouse.overlaps(titlePop) && FlxG.mouse.pressed)
+		{
+			trace("funny pop up");
+			Application.current.window.alert("PowPer is an Shooting Em Up game :)", "About the Game");
+			return;
+		}
 	}
 }

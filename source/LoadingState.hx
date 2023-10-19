@@ -2,7 +2,6 @@ package;
 
 import flixel.FlxG;
 import flixel.text.FlxText;
-import openfl.utils.Assets;
 
 /**
  * This State is overhaul
@@ -29,6 +28,7 @@ class LoadingState extends MainState
 		// alot text
 		addedImageFile(AssetPaths.fc__png);
 		addedImageFile(AssetPaths.huy1234th__png);
+		addedImageFile(AssetPaths.title__png);
 		addedByteFile(AssetPaths.dialogue1__txt);
 		addedByteFile(AssetPaths.dialogue2__txt);
 		addedByteFile(AssetPaths.dialogue3__txt);
@@ -51,6 +51,8 @@ class LoadingState extends MainState
 		addedByteFile(AssetPaths.start__txt);
 		addedByteFile(AssetPaths.setting__txt);
 		addedByteFile(AssetPaths.versiontext__txt);
+		addedByteFile(AssetPaths.fpsColor__txt);
+		addedByteFile(AssetPaths.fpsDrawer__txt);
 		finished();
 	}
 
@@ -99,7 +101,7 @@ class LoadingState extends MainState
 
 	function finished():Void
 	{
-		trace("Done Loading, move to main menu state");
+		// trace("Done Loading, move to main menu state");
 		FlxG.switchState(new MenuState());
 	}
 }

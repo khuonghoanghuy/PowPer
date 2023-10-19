@@ -9,11 +9,13 @@ import flixel.addons.studio.FlxStudio;
 
 class Main extends Sprite
 {
+	var fpstouse:Int = Std.parseInt(DataLocal.getString(AssetPaths.fpsDrawer__txt));
+
 	public function new()
 	{
 		super();
-		addChild(new FlxGame(0, 0, LoadingState, 60, 60, false, false));
-		addChild(new FPS(0, 0, 0xFFFFFF));
+		addChild(new FlxGame(0, 0, LoadingState, fpstouse, fpstouse, false, false));
+		addChild(new FPS(0, 0, Std.parseInt(DataLocal.getString(AssetPaths.fpsColor__txt))));
 		#if debug
 		FlxStudio.create();
 		#end
