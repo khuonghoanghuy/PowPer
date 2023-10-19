@@ -1,15 +1,15 @@
 package;
 
-import flixel.addons.ui.FlxUIState;
+import flixel.addons.ui.FlxUISubState;
 #if debug
 import flixel.addons.studio.FlxStudio;
 #end
 
-class MainState extends FlxUIState
+class MainSubState extends FlxUISubState
 {
-	override function create()
+	public function new()
 	{
-		super.create();
+		super();
 
 		#if debug
 		FlxStudio.create();

@@ -1,6 +1,7 @@
 package;
 
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 
@@ -11,6 +12,7 @@ class SettingMenu extends MainState
 	var fullscreenButton:FlxButton;
 	#end
 	var backButton:FlxButton;
+	var titlePop:FlxSprite;
 
 	override function create()
 	{
@@ -24,6 +26,13 @@ class SettingMenu extends MainState
 
 		backButton = new FlxButton(53, 255 + 40, DataLocal.getString(AssetPaths.options_back__txt), onBack);
 		add(backButton);
+
+		titlePop = new FlxSprite(377, 165);
+		titlePop.loadGraphic(AssetPaths.options__png);
+		titlePop.scale.set(3, 3);
+		titlePop.antialiasing = false;
+		titlePop.updateHitbox();
+		add(titlePop);
 	}
 
 	#if desktop

@@ -24,11 +24,12 @@ class LoadingState extends MainState
 
 	function cache()
 	{
-		// imageCache.image();
-		// alot text
 		addedImageFile(AssetPaths.fc__png);
 		addedImageFile(AssetPaths.huy1234th__png);
 		addedImageFile(AssetPaths.title__png);
+		addedImageFile(AssetPaths.options__png);
+
+		addedByteFile(AssetPaths.huy1234th__txt);
 		addedByteFile(AssetPaths.dialogue1_1__txt);
 		addedByteFile(AssetPaths.dialogue2_1__txt);
 		addedByteFile(AssetPaths.dialogue3_1__txt);
@@ -53,6 +54,10 @@ class LoadingState extends MainState
 		addedByteFile(AssetPaths.versiontext__txt);
 		addedByteFile(AssetPaths.fpsColor__txt);
 		addedByteFile(AssetPaths.fpsDrawer__txt);
+		addedByteFile(AssetPaths.limeApp_desc__txt);
+		addedByteFile(AssetPaths.limeApp_title__txt);
+		addedByteFile(AssetPaths.colorBG_1__txt);
+		addedByteFile(AssetPaths.stageName_1__txt);
 		finished();
 	}
 

@@ -73,7 +73,7 @@ class MenuState extends MainState
 		if (FlxG.mouse.overlaps(titlePop) && FlxG.mouse.pressed)
 		{
 			trace("funny pop up");
-			Application.current.window.alert("PowPer is an Shooting Em Up game :)", "About the Game");
+			Application.current.window.alert(DataLocal.getString(AssetPaths.limeApp_desc__txt), DataLocal.getString(AssetPaths.limeApp_title__txt));
 			return;
 		}
 	}
