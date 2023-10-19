@@ -10,7 +10,6 @@ class SettingMenu extends MainState
 	#if desktop
 	var fullscreenButton:FlxButton;
 	#end
-	var toggleFPS:FlxButton;
 	var backButton:FlxButton;
 
 	override function create()
@@ -23,12 +22,7 @@ class SettingMenu extends MainState
 		add(fullscreenButton);
 		#end
 
-		toggleFPS = new FlxButton(53, 255,
-			FlxG.save.data.toggleFPS ? DataLocal.getString(AssetPaths.options_addedFPS__txt) : DataLocal.getString(AssetPaths.options_removeFPS__txt),
-			toggleFPSCounter);
-		add(toggleFPS);
-
-		backButton = new FlxButton(53, toggleFPS.y + 40, DataLocal.getString(AssetPaths.options_back__txt), onBack);
+		backButton = new FlxButton(53, 255 + 40, DataLocal.getString(AssetPaths.options_back__txt), onBack);
 		add(backButton);
 	}
 
@@ -40,12 +34,6 @@ class SettingMenu extends MainState
 		FlxG.save.data.fullscreen = FlxG.fullscreen;
 	}
 	#end
-
-	function toggleFPSCounter():Void
-	{
-		FlxG.save.data.toggleFPS = !FlxG.save.data.toggleFPS;
-		toggleFPS.text = FlxG.save.data.toggleFPS ? DataLocal.getString(AssetPaths.options_addedFPS__txt) : DataLocal.getString(AssetPaths.options_removeFPS__txt);
-	}
 
 	function onBack():Void
 	{

@@ -37,9 +37,6 @@ class DataLocal
 
 	public static function initData()
 	{
-		if (FlxG.save.data.toggleFPS == null)
-			FlxG.save.data.toggleFPS = false;
-
 		#if desktop
 		if (FlxG.save.data.fullscreen != null)
 		{
