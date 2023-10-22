@@ -14,7 +14,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		addChild(new FlxGame(0, 0, LoadingState, fpstouse, fpstouse, false, false));
+		addChild(new FlxGame(0, 0, MenuState, fpstouse, fpstouse, false, false));
 		addChild(new FPS(0, 0, Std.parseInt(DataLocal.getString(AssetPaths.fpsColor__txt))));
 		#if debug
 		FlxStudio.create();

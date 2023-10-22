@@ -1,0 +1,1 @@
+Allows Restart Anywhere Just Using F11 Key

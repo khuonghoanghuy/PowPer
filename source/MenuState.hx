@@ -20,6 +20,7 @@ class MenuState extends MainState
 	{
 		super.create();
 		var toggleX:Float = 73;
+
 		startButton = new FlxButton(toggleX, 175, DataLocal.getString(AssetPaths.start__txt), onStart);
 		add(startButton);
 		settingButton = new FlxButton(toggleX, 235, DataLocal.getString(AssetPaths.setting__txt), onSetting);
@@ -42,7 +43,8 @@ class MenuState extends MainState
 
 	function onExit():Void
 	{
-		DataLocal.switchFade(FlxColor.BLACK, 0.33, function()
+		DataLocal.playSound(AssetPaths.confirm__wav);
+		DataLocal.switchFade(FlxColor.WHITE, 1.2, function()
 		{
 			trace("exit game");
 			System.exit(0);
@@ -51,6 +53,7 @@ class MenuState extends MainState
 
 	function onStart():Void
 	{
+		DataLocal.playSound(AssetPaths.confirm__wav);
 		DataLocal.switchFlashColor(FlxColor.WHITE, 0.33, function()
 		{
 			trace("move state");
@@ -60,6 +63,7 @@ class MenuState extends MainState
 
 	function onSetting():Void
 	{
+		DataLocal.playSound(AssetPaths.confirm__wav);
 		DataLocal.switchFade(FlxColor.BLACK, 0.33, false, function()
 		{
 			FlxG.switchState(new SettingMenu());
