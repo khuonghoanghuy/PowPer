@@ -57,6 +57,7 @@ class PauseSubState extends MainSubState
 		DataLocal.playSound(AssetPaths.confirm__wav);
 		DataLocal.switchFade(FlxColor.BLACK, 0.33, false, function()
 		{
+			PlayState.stageCount = 0;
 			FlxG.switchState(new MenuState());
 		});
 	}
